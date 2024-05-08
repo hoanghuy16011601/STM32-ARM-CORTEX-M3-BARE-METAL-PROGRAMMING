@@ -1,0 +1,310 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Huy dell, Bosch, LIC=HN0AE-5H5TZ-QDFKD-83Z2Y-2EWBF-IBHIP
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
+Toolchain Path:  D:\Software\Keil_V5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DARMSTM.DLL V1.69.1.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\hoc\EMBEDDED\MICROCONTROLLER\ARM\STM32\Project\Scheduler\Scheduler.uvprojx
+Project File Date:  04/29/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\Software\Keil_V5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+STM32F103C8_IRQ.c(7): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    7 | void Disable_IRQ()
+      |                 ^
+      |                  void
+STM32F103C8_IRQ.c(14): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   14 | void Enable_IRQ()
+      |                ^
+      |                 void
+STM32F103C8_IRQ.c(71): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   71 | void System_Pending_PENSV()
+      |                          ^
+      |                           void
+STM32F103C8_IRQ.c(36): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   36 |   NVIC->SetEnable_IRQ[IRQ_Number/32] |= (uint32_t)(1<<(IRQ_Number-(IRQ_Number/32)*32));
+      |   ^~~~~~~~~~~~~~~~~~~
+./Arm_Cortex_M3.h(68): note: expanded from macro 'NVIC'
+   68 | #define NVIC ((NVIC_Struct *)0xE000E100)
+      |              ^
+STM32F103C8_IRQ.c(41): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   41 |     NVIC->ClearEnable_IRQ[IRQ_Number/32] |= (uint32_t)(1<<(IRQ_Number-(IRQ_Number/32)*32));
+      |     ^~~~~~~~~~~~~~~~~~~~~
+./Arm_Cortex_M3.h(68): note: expanded from macro 'NVIC'
+   68 | #define NVIC ((NVIC_Struct *)0xE000E100)
+      |              ^
+STM32F103C8_IRQ.c(46): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   46 |     NVIC->SetPending_IRQ[IRQ_Number/32] |= (uint32_t)(1<<(IRQ_Number-(IRQ_Number/32)*32));
+      |     ^~~~~~~~~~~~~~~~~~~~
+./Arm_Cortex_M3.h(68): note: expanded from macro 'NVIC'
+   68 | #define NVIC ((NVIC_Struct *)0xE000E100)
+      |              ^
+STM32F103C8_IRQ.c(67): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   67 |         NVIC->IRQPriority[IRQ_Number] |= (uint8_t)(Priority_Value<<(7-NumberBit_PreEmption));
+      |         ^~~~~~~~~~~~~~~~~
+./Arm_Cortex_M3.h(68): note: expanded from macro 'NVIC'
+   68 | #define NVIC ((NVIC_Struct *)0xE000E100)
+      |              ^
+7 warnings generated.
+compiling STM32F103C8_IRQ.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/Software/Keil_V5/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/Software/Keil_V5/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/Software/Keil_V5/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
+compiling HUY_GPIO.c...
+main.c(30): warning: padding size of 'Task_Control_t' with 3 bytes to alignment boundary [-Wpadded]
+   30 | typedef struct
+      |         ^
+main.c(40): warning: no previous extern declaration for non-static variable 'Current_Task' [-Wmissing-variable-declarations]
+   40 | uint32_t Current_Task =0;
+      |          ^
+main.c(40): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   40 | uint32_t Current_Task =0;
+      | ^
+main.c(41): warning: no previous extern declaration for non-static variable 'Global_Tick' [-Wmissing-variable-declarations]
+   41 | uint32_t Global_Tick =0;
+      |          ^
+main.c(41): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   41 | uint32_t Global_Tick =0;
+      | ^
+main.c(42): warning: no previous extern declaration for non-static variable 'state_led' [-Wmissing-variable-declarations]
+   42 | uint8_t state_led = LOW;
+      |         ^
+main.c(42): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   42 | uint8_t state_led = LOW;
+      | ^
+main.c(57): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   57 | void Task_Init()
+      |               ^
+      |                void
+main.c(81): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   81 |         uint32_t *pPSP;
+      |                   ^
+main.c(123): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  123 | __attribute__ ((naked)) void Init_Scheduler_Stack()
+      |                                                  ^
+      |                                                   void
+main.c(137): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  137 | uint32_t Get_PSP_Value()
+      |                       ^
+      |                        void
+main.c(142): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  142 | uint32_t Get_Scheduler_Stack()
+      |                             ^
+      |                              void
+main.c(147): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  147 | void Unblock_Task()
+      |                  ^
+      |                   void
+main.c(158): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  158 | void Update_NextTask()
+      |                     ^
+      |                      void
+main.c(178): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  178 | void SysTick_Handler()
+      |                     ^
+      |                      void
+main.c(210): warning: no previous prototype for function 'Task_Delay' [-Wmissing-prototypes]
+  210 | void Task_Delay(uint32_t Tick_Ms)
+      |      ^
+main.c(210): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  210 | void Task_Delay(uint32_t Tick_Ms)
+      | ^
+      | static 
+main.c(219): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  219 | void Idle_Handler()
+      |                  ^
+      |                   void
+main.c(220): warning: function 'Idle_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  220 | {
+      | ^
+main.c(224): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  224 | void Task1_Handler()
+      |                   ^
+      |                    void
+main.c(225): warning: function 'Task1_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  225 | {
+      | ^
+main.c(235): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  235 | void Task2_Handler()
+      |                   ^
+      |                    void
+main.c(236): warning: function 'Task2_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  236 | {
+      | ^
+main.c(247): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  247 | void Task3_Handler()
+      |                   ^
+      |                    void
+main.c(248): warning: function 'Task3_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  248 | {
+      | ^
+main.c(258): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  258 | void Task4_Handler()
+      |                   ^
+      |                    void
+main.c(259): warning: function 'Task4_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  259 | {
+      | ^
+main.c(38): warning: no previous extern declaration for non-static variable 'User_Task' [-Wmissing-variable-declarations]
+   38 | Task_Control_t User_Task[5];
+      |                ^
+main.c(38): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   38 | Task_Control_t User_Task[5];
+      | ^
+main.c(61): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   61 |         User_Task[1].PSP_Value = Task1_STACK_START;
+      |         ^~~~~~~~~
+main.c(62): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   62 |         User_Task[2].PSP_Value = Task2_STACK_START;
+      |         ^~~~~~~~~
+main.c(63): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   63 |         User_Task[3].PSP_Value = Task3_STACK_START;
+      |         ^~~~~~~~~
+main.c(64): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   64 |         User_Task[4].PSP_Value = Task4_STACK_START;
+      |         ^~~~~~~~~
+main.c(68): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   68 |         User_Task[1].Task_State = Ready_State;
+      |         ^~~~~~~~~
+main.c(69): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   69 |         User_Task[2].Task_State = Ready_State;
+      |         ^~~~~~~~~
+main.c(70): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   70 |         User_Task[3].Task_State = Ready_State;
+      |         ^~~~~~~~~
+main.c(71): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   71 |         User_Task[4].Task_State = Ready_State;
+      |         ^~~~~~~~~
+main.c(76): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   76 |         User_Task[1].Task_Handler = Task1_Handler;
+      |         ^~~~~~~~~
+main.c(77): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   77 |         User_Task[2].Task_Handler = Task2_Handler;
+      |         ^~~~~~~~~
+main.c(78): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   78 |         User_Task[3].Task_Handler = Task3_Handler;
+      |         ^~~~~~~~~
+main.c(79): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   79 |         User_Task[4].Task_Handler = Task4_Handler;
+      |         ^~~~~~~~~
+main.c(84): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   84 |                 pPSP = (uint32_t *)User_Task[i].PSP_Value;
+      |                                    ^~~~~~~~~
+main.c(85): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   85 |                 pPSP--;
+      |                 ^~~~
+main.c(88): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   88 |                 pPSP--;
+      |                 ^~~~
+main.c(89): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   89 |                 *pPSP = (uint32_t)User_Task[i].Task_Handler; /// PC
+      |                                   ^~~~~~~~~
+main.c(91): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   91 |                 pPSP--;
+      |                 ^~~~
+main.c(96): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   96 |                         pPSP--;
+      |                         ^~~~
+main.c(99): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   99 |                 User_Task[i].PSP_Value = (uint32_t)pPSP;
+      |                 ^~~~~~~~~
+main.c(134): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  134 |         User_Task[Current_Task].PSP_Value = Current_SP_Value;
+      |         ^~~~~~~~~
+main.c(139): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  139 |         return User_Task[Current_Task].PSP_Value;
+      |                ^~~~~~~~~
+main.c(151): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  151 |                 if(User_Task[i].Task_State == Blocked_State && User_Task[i].Task_Tick == Global_Tick)
+      |                    ^~~~~~~~~
+main.c(151): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  151 |                 if(User_Task[i].Task_State == Blocked_State && User_Task[i].Task_Tick == Global_Tick)
+      |                                                                ^~~~~~~~~
+main.c(153): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  153 |                         User_Task[i].Task_State = Ready_State;
+      |                         ^~~~~~~~~
+main.c(165): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  165 |                 State = User_Task[Current_Task].Task_State;
+      |                         ^~~~~~~~~
+main.c(213): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  213 |         User_Task[Current_Task].Task_Tick += Tick_Ms;
+      |         ^~~~~~~~~
+main.c(214): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  214 |         User_Task[Current_Task].Task_State = Blocked_State;
+      |         ^~~~~~~~~
+51 warnings generated.
+compiling main.c...
+assembling startup_stm32f10x_md.s...
+linking...
+Program Size: Code=2504 RO-data=252 RW-data=0 ZI-data=1720  
+".\Objects\Scheduler.axf" - 0 Error(s), 63 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  D:/Software/Keil_V5/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  D:/Software/Keil_V5/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
